@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Raspberry Pi Pico W</title>
+        <style>
+            body {
+                text-align: center;
+                background-color: #F0F2F5;
+                font-family: Arial, sans-serif;
+                font-size: 16px;
+                line-height: 1.5;
+                padding: 1em;
+            }
+            h1 {
+                margin-top: 0;
+            }
+            .led {
+                display: inline-block;
+                width: 50px;
+                height: 50px;
+                margin: 1em;
+                border-radius: 50%;
+                background-color: #4CAF50;
+            }
+            .led-label {
+                display: block;
+                font-size: 1.5em;
+                margin-bottom: 1em;
+            }
+            .button {
+                display: inline-block;
+                padding: 1em;
+                border: none;
+                border-radius: 5px;
+                background-color: #2196F3;
+                color: #FFFFFF;
+                font-size: 1em;
+                cursor: pointer;
+            }
+            .on {
+                display: inline-block;
+                padding: 1em;
+                border: none;
+                border-radius: 5px;
+                background-color: #4CAF50;
+                color: #FFFFFF;
+                font-size: 1em;
+                cursor: pointer;
+            }
+            .off {
+                display: inline-block;
+                padding: 1em;
+                border: none;
+                border-radius: 5px;
+                background-color: #F44336;
+                color: #FFFFFF;
+                font-size: 1em;
+                cursor: pointer;
+            }
+            .button:hover {
+                background-color: #0D47A1;
+            }
+            .on:hover {
+                background-color: #309333;
+            }
+            .off:hover {
+                background-color: #e52c1f;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>LED Control Panel</h1>
+        <div class="led"></div>
+        <div class="led-label">The LED is currently {"on" if green.value() else "off"}</div>
+        <div>
+            <button class="on" onclick="location.href='/led=on'">LED On</button>
+            <button class="off" onclick="location.href='/led=off'">LED Off</button>
+        </div>
+        <br>
+        <h1>Buzzer Control Panel</h1>
+        <div class="led-label">The buzzer is currently {"on" if on else "off"}</div>
+        <div class="led-label">Current frequency: {frequency}</div>
+        <div>
+            <button class="button" onclick="location.href='/buzzer=up'">Frequency Up</button>
+            <button class="button" onclick="location.href='/buzzer=down'">Frequency Down</button>
+            <br><br>
+            <button class="on" onclick="location.href='/buzzer=on'">Buzzer On</button>
+            <button class="off" onclick="location.href='/buzzer=off'">Buzzer Off</button>
+        </div>
+        <br>
+        <div>The IP address is {ip} and the port is {port}</div>
+    </body>
+</html>
