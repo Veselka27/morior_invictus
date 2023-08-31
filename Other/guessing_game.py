@@ -10,8 +10,7 @@ lower_response = ">> Lower!\n>> "
 value_error_response = ">> Only numbers!"
 exit_response = "\n>> See you soon!"
 
-#correct = randint(first, last)
-correct = 500
+correct = randint(first, last)
 response = first_prompt
 
 def check_for_succes():
